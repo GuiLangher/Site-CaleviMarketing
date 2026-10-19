@@ -91,8 +91,8 @@ export default function Footer({ onOpenBooking }) {
           <div className="space-y-4 text-sm text-white/80">
             <div className="flex items-center gap-3">
               <Mail className="w-4 h-4 text-[#D4AF37]" />
-              <a href="mailto:contato@calevi.com.br" className="hover:text-white transition-colors">
-                contato@calevi.com.br
+              <a href="mailto:marketing@calevi.com.br" className="hover:text-white transition-colors">
+                marketing@calevi.com.br
               </a>
             </div>
             <div className="flex items-center gap-3">
@@ -104,6 +104,30 @@ export default function Footer({ onOpenBooking }) {
                 className="hover:text-white transition-colors text-left"
               >
                 Atendimento via WhatsApp
+              </a>
+            </div>
+            <div className="flex items-center gap-3">
+              <svg 
+                className="w-4 h-4 text-[#D4AF37] shrink-0" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                stroke="currentColor" 
+                strokeWidth="2" 
+                strokeLinecap="round" 
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+              </svg>
+              <a 
+                href="https://www.instagram.com/calevimarketing?srtk=b3M2cnpjNTdwdHh1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition-colors text-left"
+              >
+                @calevimarketing
               </a>
             </div>
             <div className="flex items-center gap-3 text-white/60">

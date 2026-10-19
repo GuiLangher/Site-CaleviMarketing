@@ -36,8 +36,19 @@ export default function BookingModal({ isOpen, onClose }) {
 
   if (!isOpen) return null;
 
+  const buildWhatsAppUrl = () => {
+    const message = `Olá! Meu nome é *${formData.name.trim()}*, da marca/empresa *${formData.brand.trim()}*.\n\n` +
+      `Acabei de solicitar o *Diagnóstico Estratégico* pelo site da Calevi.\n\n` +
+      `📌 *Foco Prioritário:* ${formData.challenge}\n` +
+      `📱 *WhatsApp informado:* ${formData.whatsapp.trim()}`;
+
+    return `https://wa.me/5547988174431?text=${encodeURIComponent(message)}`;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    const waUrl = buildWhatsAppUrl();
+    window.open(waUrl, '_blank', 'noopener,noreferrer');
     setIsSubmitted(true);
   };
 
@@ -267,13 +278,13 @@ export default function BookingModal({ isOpen, onClose }) {
 
             <div className="w-full max-w-sm space-y-3">
               <a
-                href={`https://wa.me/5547988174431?text=Ol%C3%A1%2C%20meu%20nome%20%C3%A9%20${encodeURIComponent(formData.name)}%20da%20marca%20${encodeURIComponent(formData.brand)}.%20Acabei%20de%20solicitar%20o%20diagn%C3%B3stico%20no%20site%20da%20Calevi.%20Foco%3A%20${encodeURIComponent(formData.challenge)}.`}
+                href={buildWhatsAppUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full py-3.5 px-6 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-lg shadow-emerald-900/40"
               >
                 <MessageCircle className="w-4 h-4" />
-                <span>Iniciar no WhatsApp Imediatamente</span>
+                <span>Conversar no WhatsApp Agora</span>
               </a>
 
               <button
