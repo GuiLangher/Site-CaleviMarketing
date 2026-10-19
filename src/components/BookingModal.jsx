@@ -39,8 +39,7 @@ export default function BookingModal({ isOpen, onClose }) {
   const buildWhatsAppUrl = () => {
     const message = `Olá! Meu nome é *${formData.name.trim()}*, da marca/empresa *${formData.brand.trim()}*.\n\n` +
       `Acabei de solicitar o *Diagnóstico Estratégico* pelo site da Calevi.\n\n` +
-      `📌 *Foco Prioritário:* ${formData.challenge}\n` +
-      `📱 *WhatsApp informado:* ${formData.whatsapp.trim()}`;
+      `*Foco Prioritário:* ${formData.challenge}`;
 
     return `https://wa.me/5547988174431?text=${encodeURIComponent(message)}`;
   };
