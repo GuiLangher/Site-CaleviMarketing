@@ -68,7 +68,7 @@ export default function Philosophy({ onOpenBooking }) {
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1080&q=60&fm=webp')`,
+            backgroundImage: `url('/assets/manifesto-wave.webp')`,
             filter: 'grayscale(1) contrast(1.6) brightness(0.75)',
             mixBlendMode: 'multiply',
             opacity: 0.85,

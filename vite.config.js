@@ -9,6 +9,11 @@ export default defineConfig({
     cssMinify: true,
     cssCodeSplit: true,
     chunkSizeWarningLimit: 600,
+    modulePreload: {
+      resolveDependencies(filename, deps) {
+        return deps.filter((dep) => !dep.includes('motion'));
+      },
+    },
     rollupOptions: {
       output: {
         manualChunks(id) {

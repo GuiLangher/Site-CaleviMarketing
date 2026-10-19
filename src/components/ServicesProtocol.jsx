@@ -375,24 +375,24 @@ export default function ServicesProtocol({ onOpenBooking }) {
                             <span className="text-[#F5E6B3]">AUDIO</span>
                             <div className="flex items-end gap-0.5 h-3">
                               <motion.span 
-                                animate={{ height: ["20%", "85%", "35%", "95%", "40%"] }} 
+                                animate={{ scaleY: [0.2, 0.85, 0.35, 0.95, 0.4] }} 
                                 transition={{ repeat: Infinity, duration: 0.8, ease: "easeInOut" }} 
-                                className="w-1 bg-[#D4AF37] rounded-xs" 
+                                className="w-1 h-3 bg-[#D4AF37] rounded-xs origin-bottom will-change-transform" 
                               />
                               <motion.span 
-                                animate={{ height: ["60%", "25%", "100%", "45%", "80%"] }} 
+                                animate={{ scaleY: [0.6, 0.25, 1.0, 0.45, 0.8] }} 
                                 transition={{ repeat: Infinity, duration: 0.65, delay: 0.1, ease: "easeInOut" }} 
-                                className="w-1 bg-[#D4AF37] rounded-xs" 
+                                className="w-1 h-3 bg-[#D4AF37] rounded-xs origin-bottom will-change-transform" 
                               />
                               <motion.span 
-                                animate={{ height: ["30%", "95%", "40%", "85%", "30%"] }} 
+                                animate={{ scaleY: [0.3, 0.95, 0.4, 0.85, 0.3] }} 
                                 transition={{ repeat: Infinity, duration: 0.9, delay: 0.2, ease: "easeInOut" }} 
-                                className="w-1 bg-[#D4AF37] rounded-xs" 
+                                className="w-1 h-3 bg-[#D4AF37] rounded-xs origin-bottom will-change-transform" 
                               />
                               <motion.span 
-                                animate={{ height: ["70%", "30%", "100%", "50%", "90%"] }} 
+                                animate={{ scaleY: [0.7, 0.3, 1.0, 0.5, 0.9] }} 
                                 transition={{ repeat: Infinity, duration: 0.75, delay: 0.15, ease: "easeInOut" }} 
-                                className="w-1 bg-emerald-400 rounded-xs" 
+                                className="w-1 h-3 bg-emerald-400 rounded-xs origin-bottom will-change-transform" 
                               />
                             </div>
                           </div>
@@ -413,10 +413,10 @@ export default function ServicesProtocol({ onOpenBooking }) {
                           }}
                         />
 
-                        {/* Animated Laser Scanning Line - Full Container Travel */}
+                        {/* Animated Laser Scanning Line - GPU Transform Translation */}
                         <motion.div 
-                          className="absolute inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent shadow-[0_0_18px_#D4AF37,0_0_6px_#FFFFFF] z-20 pointer-events-none"
-                          animate={{ top: ["5%", "95%", "5%"] }}
+                          className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent shadow-[0_0_18px_#D4AF37,0_0_6px_#FFFFFF] z-20 pointer-events-none will-change-transform"
+                          animate={{ y: [10, 180, 10] }}
                           transition={{
                             repeat: Infinity,
                             duration: 2.8,
@@ -426,8 +426,8 @@ export default function ServicesProtocol({ onOpenBooking }) {
 
                         {/* Animated Laser Glow Trail */}
                         <motion.div 
-                          className="absolute inset-x-0 h-10 bg-gradient-to-b from-[#D4AF37]/15 to-transparent pointer-events-none z-10"
-                          animate={{ top: ["0%", "82%", "0%"] }}
+                          className="absolute inset-x-0 top-0 h-10 bg-gradient-to-b from-[#D4AF37]/15 to-transparent pointer-events-none z-10 will-change-transform"
+                          animate={{ y: [0, 150, 0] }}
                           transition={{
                             repeat: Infinity,
                             duration: 2.8,
@@ -570,10 +570,10 @@ export default function ServicesProtocol({ onOpenBooking }) {
                         {/* Middle: Interactive Landing Page & E-commerce Wireframe Mockup */}
                         <div className="my-auto py-1 flex flex-col gap-2 relative">
                           <div className="p-2.5 rounded-xl bg-black/40 border border-white/10 flex flex-col gap-2 relative overflow-hidden">
-                            {/* Shimmer laser highlight */}
+                            {/* Shimmer laser highlight - GPU translation */}
                             <motion.div
-                              className="absolute inset-y-0 w-12 bg-gradient-to-r from-transparent via-white/10 to-transparent pointer-events-none"
-                              animate={{ left: ["-30%", "130%"] }}
+                              className="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-transparent via-white/10 to-transparent pointer-events-none will-change-transform"
+                              animate={{ x: ["-40px", "260px"] }}
                               transition={{ repeat: Infinity, duration: 2.4, ease: "easeInOut" }}
                             />
                             

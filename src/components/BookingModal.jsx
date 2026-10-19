@@ -7,19 +7,18 @@ export default function BookingModal({ isOpen, onClose, initialPlan = null }) {
   const [isSelectOpen, setIsSelectOpen] = useState(false);
   const selectRef = useRef(null);
 
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState(() => ({
     name: '',
     brand: '',
     whatsapp: '',
     challenge: initialPlan || 'Projeto Essencial',
-  });
+  }));
 
-  // Atualiza a seleção quando initialPlan mudar ao abrir o modal
-  useEffect(() => {
-    if (initialPlan) {
-      setFormData((prev) => ({ ...prev, challenge: initialPlan }));
-    }
-  }, [initialPlan]);
+  const [prevPlan, setPrevPlan] = useState(initialPlan);
+  if (initialPlan !== prevPlan) {
+    setPrevPlan(initialPlan);
+    setFormData((prev) => ({ ...prev, challenge: initialPlan || 'Projeto Essencial' }));
+  }
 
   // Fechar dropdown ao clicar fora ou pressionar Escape
   useEffect(() => {
