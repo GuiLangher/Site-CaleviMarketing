@@ -2,11 +2,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { 
   Check, 
-  ArrowUpRight, 
   Palette 
 } from 'lucide-react';
 
-export default function ServicesProtocol({ onOpenBooking }) {
+export default function ServicesProtocol() {
   const protocolCards = [
     {
       id: "protocol-01",
@@ -141,15 +140,8 @@ export default function ServicesProtocol({ onOpenBooking }) {
                     </div>
                   </div>
 
-                  {/* Card Action */}
-                  <div className="pt-6 border-t border-white/10 flex items-center justify-between">
-                    <button
-                      onClick={onOpenBooking}
-                      className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-widest text-[#F5E6B3] hover:text-white transition-colors group/btn cursor-pointer"
-                    >
-                      <span>Incluir no Diagnóstico</span>
-                      <ArrowUpRight className="w-4 h-4 text-[#D4AF37] group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
-                    </button>
+                  {/* Card Footer */}
+                  <div className="pt-6 border-t border-white/10 flex items-center justify-start">
                     <span className="font-mono text-[11px] text-white/40">
                       DISCIPLINA // 0{index + 1}
                     </span>
