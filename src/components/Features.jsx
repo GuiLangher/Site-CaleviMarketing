@@ -2,13 +2,11 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { 
   Sparkles, 
-  Terminal, 
   Calendar, 
   CheckCircle2, 
   Layers, 
   Activity, 
   TrendingUp,
-  Cpu,
   Clock
 } from 'lucide-react';
 
@@ -62,11 +60,11 @@ function DiagnosticShuffler({ inView }) {
       <div className="flex items-center justify-between border-b border-white/10 pb-4">
         <div className="flex items-center gap-2">
           <span className="w-2.5 h-2.5 rounded-full bg-[#D4AF37] animate-pulse" />
-          <span className="font-mono text-xs text-white/70 uppercase tracking-widest">
+          <span className="text-xs font-semibold text-white/80 uppercase tracking-wider">
             Diagnóstico Contínuo
           </span>
         </div>
-        <span className="font-mono text-[11px] text-[#F5E6B3] px-2 py-0.5 rounded bg-white/5 border border-white/10">
+        <span className="text-[11px] font-medium text-[#F5E6B3] px-2.5 py-0.5 rounded-full bg-white/5 border border-white/10 tracking-wider">
           VISÃO INTEGRADA
         </span>
       </div>
@@ -98,7 +96,7 @@ function DiagnosticShuffler({ inView }) {
               className="absolute inset-x-2 top-0 rounded-2xl bg-gradient-to-b from-[#2A0408] to-[#160205] border border-white/15 p-5 shadow-2xl backdrop-blur-md will-change-transform"
             >
               <div className="flex items-start justify-between mb-3">
-                <span className="font-mono text-[10px] tracking-wider uppercase px-2.5 py-1 rounded-full bg-white/10 text-[#F5E6B3] border border-[#D4AF37]/30">
+                <span className="text-[10px] font-semibold tracking-wider uppercase px-2.5 py-1 rounded-full bg-white/10 text-[#F5E6B3] border border-[#D4AF37]/30">
                   {card.pill}
                 </span>
                 <card.icon className="w-4 h-4 text-[#D4AF37]" />
@@ -112,7 +110,7 @@ function DiagnosticShuffler({ inView }) {
                 <span className="text-3xl font-extrabold text-gold-gradient font-serif">
                   {card.score}
                 </span>
-                <span className="text-[11px] font-mono text-white/60 uppercase">
+                <span className="text-[11px] font-medium text-white/60 uppercase tracking-wider">
                   {card.metricLabel}
                 </span>
               </div>
@@ -126,124 +124,16 @@ function DiagnosticShuffler({ inView }) {
       </div>
 
       {/* Bottom telemetry footer */}
-      <div className="pt-4 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-white/50">
+      <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs text-white/50 font-medium tracking-wide">
         <span>ACOMPANHAMENTO: PERIÓDICO</span>
-        <span className="text-[#D4AF37]">3 PILARES ESSENCIAIS</span>
+        <span className="text-[#D4AF37] font-semibold">3 PILARES ESSENCIAIS</span>
       </div>
     </div>
   );
 }
 
 // ----------------------------------------------------------------------------
-// 2. Telemetry Typewriter Subcomponent (Only ticks when inView)
-// ----------------------------------------------------------------------------
-const TYPEWRITER_MESSAGES = [
-  "MAPEANDO A ESSÊNCIA ÚNICA DA MARCA...",
-  "CONECTANDO HISTÓRIAS REAIS ÀS NECESSIDADES DO MERCADO.",
-  "REFINANDO NARRATIVAS COM RIGOR EDITORIAL E INTENÇÃO.",
-  "ENGAJAMENTO GENUÍNO ATIVADO. CRESCIMENTO SUSTENTÁVEL CONFIRMADO.",
-  "CRIATIVIDADE QUE NÃO APENAS CHAMA ATENÇÃO: CONVERTE.",
-];
-
-function TelemetryTypewriter({ inView }) {
-  const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
-  const [displayedText, setDisplayedText] = useState("");
-  const [isDeleting, setIsDeleting] = useState(false);
-
-  useEffect(() => {
-    if (!inView) return;
-
-    let timeout;
-    const fullMessage = TYPEWRITER_MESSAGES[currentMessageIndex];
-
-    if (!isDeleting) {
-      if (displayedText.length < fullMessage.length) {
-        timeout = setTimeout(() => {
-          setDisplayedText(fullMessage.slice(0, displayedText.length + 1));
-        }, 45);
-      } else {
-        timeout = setTimeout(() => {
-          setIsDeleting(true);
-        }, 2200);
-      }
-    } else {
-      if (displayedText.length > 0) {
-        timeout = setTimeout(() => {
-          setDisplayedText(fullMessage.slice(0, displayedText.length - 1));
-        }, 25);
-      } else {
-        timeout = setTimeout(() => {
-          setIsDeleting(false);
-          setCurrentMessageIndex((prev) => (prev + 1) % TYPEWRITER_MESSAGES.length);
-        }, 50);
-      }
-    }
-
-    return () => clearTimeout(timeout);
-  }, [displayedText, isDeleting, currentMessageIndex, inView]);
-
-  return (
-    <div className="glass-card rounded-3xl p-6 sm:p-7 flex flex-col justify-between relative overflow-hidden border border-white/10 group hover:border-[#D4AF37]/30 transition-all duration-500 min-h-[460px]">
-      {/* Header */}
-      <div className="flex items-center justify-between border-b border-white/10 pb-4">
-        <div className="flex items-center gap-2">
-          <Terminal className="w-4 h-4 text-[#D4AF37]" />
-          <span className="font-mono text-xs text-white/70 uppercase tracking-widest">
-            Comunicação com Propósito
-          </span>
-        </div>
-        <div className="flex items-center gap-1.5 font-mono text-[10px] text-emerald-400">
-          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-          EM TEMPO REAL
-        </div>
-      </div>
-
-      {/* Terminal Body */}
-      <div className="my-auto py-4 flex flex-col justify-center">
-        <div className="rounded-2xl bg-[#090102]/90 border border-white/10 p-5 font-mono text-xs relative overflow-hidden shadow-inner">
-          <div className="flex items-center gap-1.5 mb-4 opacity-50">
-            <span className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
-            <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
-            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
-            <span className="ml-2 text-[10px] text-white/40">Comunicação Estratégica // Calevi</span>
-          </div>
-
-          <div className="space-y-2 text-white/70">
-            <div className="text-[11px] text-white/40">
-              // CRIATIVIDADE QUE CONECTA COM INTENÇÃO
-            </div>
-            <div className="text-white/60 text-[11px]">
-              [OBJETIVO]: NARRATIVA CONSOLIDADA
-            </div>
-            
-            <div className="pt-2 text-[#F5E6B3] font-medium leading-relaxed min-h-[72px]">
-              <span className="text-[#D4AF37] font-bold mr-2">&gt;</span>
-              {displayedText}
-              <span className="inline-block w-2 h-4 bg-[#D4AF37] ml-1 animate-pulse align-middle" />
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-4 px-3 py-2 rounded-xl bg-white/5 border border-white/5 flex items-center justify-between text-[11px] font-mono text-white/60">
-          <span className="flex items-center gap-1.5">
-            <Cpu className="w-3.5 h-3.5 text-[#D4AF37]" />
-            Conexão com o público:
-          </span>
-          <span className="text-[#D4AF37] font-bold">GENUÍNA E REAL</span>
-        </div>
-      </div>
-
-      {/* Bottom telemetry footer */}
-      <div className="pt-4 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-white/50">
-        <span>PROCESSO: HUMANIZADO</span>
-        <span className="text-[#D4AF37]">CRIATIVIDADE COM FOCO</span>
-      </div>
-    </div>
-  );
-}
-
-// ----------------------------------------------------------------------------
-// 3. Protocol Scheduler Subcomponent (Only ticks when inView)
+// 2. Protocol Scheduler Subcomponent (Only ticks when inView)
 // ----------------------------------------------------------------------------
 function ProtocolScheduler({ inView }) {
   const [scheduleState, setScheduleState] = useState(0); 
@@ -262,11 +152,11 @@ function ProtocolScheduler({ inView }) {
       <div className="flex items-center justify-between border-b border-white/10 pb-4">
         <div className="flex items-center gap-2">
           <Calendar className="w-4 h-4 text-[#D4AF37]" />
-          <span className="font-mono text-xs text-white/70 uppercase tracking-widest">
+          <span className="text-xs font-semibold text-white/80 uppercase tracking-wider">
             Agenda e Planejamento
           </span>
         </div>
-        <span className="font-mono text-[11px] text-[#F5E6B3] px-2 py-0.5 rounded bg-white/5 border border-white/10">
+        <span className="text-[11px] font-medium text-[#F5E6B3] px-2.5 py-0.5 rounded-full bg-white/5 border border-white/10 tracking-wider">
           ALINHAMENTOS SEMANAIS
         </span>
       </div>
@@ -275,7 +165,7 @@ function ProtocolScheduler({ inView }) {
       <div className="relative my-auto py-2">
         <div className="grid grid-cols-5 gap-2 text-center mb-3">
           {['SEG', 'TER', 'QUA', 'QUI', 'SEX'].map((day) => (
-            <div key={day} className="font-mono text-[10px] text-white/50 tracking-wider">
+            <div key={day} className="text-[11px] font-semibold text-white/60 tracking-wider uppercase">
               {day}
             </div>
           ))}
@@ -299,16 +189,16 @@ function ProtocolScheduler({ inView }) {
                     : 'bg-white/5 border-white/10 opacity-70'
                 }`}
               >
-                <span className="text-xs font-mono font-semibold text-white/80">
+                <span className="text-sm font-semibold text-white/90">
                   {item.day}
                 </span>
 
                 {item.target ? (
-                  <span className="text-[9px] font-mono leading-tight px-1 py-0.5 rounded bg-[#D4AF37]/20 text-[#F5E6B3] border border-[#D4AF37]/40">
+                  <span className="text-[9px] font-semibold leading-tight px-1.5 py-0.5 rounded bg-[#D4AF37]/20 text-[#F5E6B3] border border-[#D4AF37]/40 tracking-wider uppercase">
                     {scheduleState >= 3 ? "CONFIRMADO" : "REUNIÃO"}
                   </span>
                 ) : (
-                  <span className="text-[9px] font-mono text-white/30">LIVRE</span>
+                  <span className="text-[9px] font-medium text-white/40 tracking-wider uppercase">LIVRE</span>
                 )}
               </div>
             );
@@ -319,10 +209,10 @@ function ProtocolScheduler({ inView }) {
         <div className="mt-4 pt-3 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Clock className="w-3.5 h-3.5 text-[#D4AF37]" />
-            <span className="font-mono text-[11px] text-white/70">15:00 — Alinhamento de Marca</span>
+            <span className="text-xs text-white/80 font-medium">15:00 — Alinhamento de Marca</span>
           </div>
           <div
-            className={`px-3 py-1.5 rounded-lg font-mono text-[11px] font-bold uppercase transition-all duration-300 flex items-center gap-1 ${
+            className={`px-3.5 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition-all duration-300 flex items-center gap-1.5 ${
               scheduleState >= 2
                 ? 'bg-[#D4AF37] text-[#100103] shadow-[0_0_15px_rgba(212,175,55,0.5)] scale-105'
                 : 'bg-white/10 text-white/60'
@@ -330,7 +220,7 @@ function ProtocolScheduler({ inView }) {
           >
             {scheduleState >= 3 ? (
               <>
-                <CheckCircle2 className="w-3 h-3 text-[#100103]" />
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#100103]" />
                 Salvo
               </>
             ) : (
@@ -370,9 +260,9 @@ function ProtocolScheduler({ inView }) {
       </div>
 
       {/* Bottom telemetry footer */}
-      <div className="pt-4 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-white/50">
+      <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs text-white/50 font-medium tracking-wide">
         <span>ACOMPANHAMENTO: CONTÍNUO</span>
-        <span className="text-[#D4AF37]">ENTREGAS PONTUAIS</span>
+        <span className="text-[#D4AF37] font-semibold">ENTREGAS PONTUAIS</span>
       </div>
     </div>
   );
@@ -408,7 +298,7 @@ export default function Features() {
     >
       {/* Section Header */}
       <div className="flex flex-col items-start max-w-3xl mb-16 sm:mb-20">
-        <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-[#2A0408] border border-[#D4AF37]/30 text-[#F5E6B3] font-mono text-[11px] uppercase tracking-widest mb-4">
+        <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#2A0408] border border-[#D4AF37]/30 text-[#F5E6B3] text-xs font-semibold uppercase tracking-wider mb-4">
           <Sparkles className="w-3.5 h-3.5 text-[#D4AF37]" />
           Metodologia na Prática
         </div>
@@ -423,10 +313,9 @@ export default function Features() {
         </p>
       </div>
 
-      {/* Grid of 3 Artifacts - Isolated and CPU-Friendly */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch">
+      {/* Grid of Artifacts - Isolated and CPU-Friendly */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-stretch">
         <DiagnosticShuffler inView={inView} />
-        <TelemetryTypewriter inView={inView} />
         <ProtocolScheduler inView={inView} />
       </div>
     </section>
