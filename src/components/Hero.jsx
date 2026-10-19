@@ -83,14 +83,14 @@ export default function Hero({ onOpenBooking }) {
           </div>
 
           {/* Quick credibility telemetry ticker */}
-          <div className="mt-12 pt-6 border-t border-white/10 flex flex-wrap items-center gap-6 sm:gap-12 text-xs font-mono text-white/60 animate-hero-fade-delay-3">
+          <div className="mt-12 pt-6 border-t border-white/10 flex flex-wrap items-center gap-6 sm:gap-12 text-xs text-white/70 font-medium tracking-wide animate-hero-fade-delay-3">
             <div className="flex items-center gap-2">
               <ShieldCheck className="w-4 h-4 text-[#D4AF37]" />
-              <span>+8 ANOS EM JORNALISMO INVESTIGATIVO</span>
+              <span>+8 ANOS EM JORNALISMO</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37]" />
-              <span>+5 ANOS EM MARKETING ESTRATÉGICO</span>
+              <span>+5 ANOS EM MARKETING E COMUNICAÇÃO</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37]" />

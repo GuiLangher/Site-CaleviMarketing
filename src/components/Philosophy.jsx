@@ -107,14 +107,13 @@ export default function Philosophy({ onOpenBooking }) {
         {/* Sobre Nós Headline Block */}
         <div className="max-w-5xl mb-24 sm:mb-32">
           {/* Label */}
-          <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-[#D4AF37] mb-8">
-            <span className="w-8 h-[1px] bg-[#D4AF37]" />
+          <div className="text-xs uppercase tracking-widest font-semibold text-[#D4AF37] mb-8">
             Sobre Nós
           </div>
 
           {/* Statement 1: Common / Neutral */}
           <div className="mb-8 pl-4 border-l-2 border-white/15">
-            <span className="font-mono text-xs uppercase tracking-widest text-white/40 block mb-2">
+            <span className="text-xs uppercase tracking-wider text-white/50 font-medium block mb-2">
               A maioria foca em:
             </span>
             <p className="font-sans text-xl sm:text-2xl md:text-3xl text-white/50 font-normal leading-snug">
@@ -124,7 +123,7 @@ export default function Philosophy({ onOpenBooking }) {
 
           {/* Statement 2: Differential / Massive Serif Italic in Gold */}
           <div className="pl-4 border-l-2 border-[#D4AF37] pt-2">
-            <span className="font-mono text-xs uppercase tracking-widest text-[#D4AF37] font-semibold block mb-3">
+            <span className="text-xs uppercase tracking-wider text-[#D4AF37] font-semibold block mb-3">
               Nós focamos em:
             </span>
             <h2 className="font-serif italic text-[clamp(2.4rem,6vw,5.5rem)] leading-[1.02] text-white tracking-tight">
@@ -140,7 +139,7 @@ export default function Philosophy({ onOpenBooking }) {
         {/* The Founders' Story: Two Sisters, Two Expertises, One Vision */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 sm:gap-12 items-center mb-28 sm:mb-36 pt-10 border-t border-white/10">
           <div className="lg:col-span-6 flex flex-col items-start">
-            <div className="px-3 py-1 rounded-full bg-[#2A0408] border border-[#D4AF37]/30 text-[#F5E6B3] font-mono text-[11px] uppercase tracking-wider mb-4">
+            <div className="px-3.5 py-1.5 rounded-full bg-[#2A0408] border border-[#D4AF37]/30 text-[#F5E6B3] text-xs font-semibold uppercase tracking-wider mb-4">
               A Origem da Calevi
             </div>
             
@@ -160,7 +159,7 @@ export default function Philosophy({ onOpenBooking }) {
               </p>
             </div>
 
-            <div className="mt-8 flex items-center gap-6 pt-6 border-t border-white/10 w-full font-mono text-xs text-white/60">
+            <div className="mt-8 flex items-center gap-6 pt-6 border-t border-white/10 w-full text-xs text-white/70 font-medium">
               <div>
                 <span className="block font-serif text-2xl font-bold text-[#F5E6B3]">8+</span>
                 <span>Anos de Jornalismo</span>
@@ -181,16 +180,15 @@ export default function Philosophy({ onOpenBooking }) {
           <div className="lg:col-span-6 relative">
             <div className="relative rounded-3xl overflow-hidden border border-white/15 shadow-[0_20px_50px_rgba(0,0,0,0.8)] group">
               <img
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=720&q=70&fm=webp"
-                alt="Sinergia entre estratégia, jornalismo e marketing"
-                width="720"
-                height="450"
+                src="/assets/fundadoras-calevi.jpg"
+                alt="Fundadoras da Calevi Comunicação e Marketing"
+                width="749"
+                height="1024"
                 loading="lazy"
                 decoding="async"
-                className="w-full h-[450px] sm:h-[500px] object-cover filter brightness-75 contrast-110 group-hover:scale-105 transition-transform duration-700"
-                style={{ aspectRatio: '16 / 10' }}
+                className="w-full h-[540px] sm:h-[620px] object-cover object-top filter contrast-105 group-hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#100103] via-[#2A0408]/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#100103] via-[#100103]/40 to-transparent" />
               
               {/* Floating quote badge */}
               <div className="absolute bottom-6 left-6 right-6 p-6 rounded-2xl bg-[#100103]/85 backdrop-blur-xl border border-[#D4AF37]/30 shadow-2xl">
@@ -198,7 +196,7 @@ export default function Philosophy({ onOpenBooking }) {
                 <p className="font-serif italic text-sm sm:text-base text-white/95 leading-relaxed">
                   &ldquo;Acreditamos que boas ideias merecem estratégia, marcas precisam de identidade genuína e uma comunicação bem construída abre novos caminhos.&rdquo;
                 </p>
-                <div className="mt-3 flex items-center justify-between text-xs font-mono text-[#F5E6B3]/80">
+                <div className="mt-3 flex items-center justify-between text-xs text-[#F5E6B3]/80 font-medium">
                   <span>FUNDADORAS DA CALEVI</span>
                   <span>JORNALISMO & MARKETING</span>
                 </div>
@@ -211,14 +209,14 @@ export default function Philosophy({ onOpenBooking }) {
         <div>
           <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12">
             <div>
-              <span className="font-mono text-xs uppercase tracking-widest text-[#D4AF37]">
+              <span className="text-xs uppercase tracking-wider font-semibold text-[#D4AF37]">
                 Princípios Norteadores
               </span>
               <h3 className="text-3xl sm:text-4xl font-serif font-bold text-white mt-2">
                 Nossos 6 Pilares de Valor
               </h3>
             </div>
-            <p className="text-sm font-mono text-white/50 mt-2 sm:mt-0">
+            <p className="text-xs text-white/50 mt-2 sm:mt-0 font-medium uppercase tracking-wider">
               PADRÃO DE QUALIDADE // NENHUM DETALHE AO ACASO
             </p>
           </div>
@@ -235,7 +233,7 @@ export default function Philosophy({ onOpenBooking }) {
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">
-                    <span className="font-mono text-xs font-bold text-[#D4AF37] px-2.5 py-1 rounded bg-[#D4AF37]/10 border border-[#D4AF37]/20">
+                    <span className="text-xs font-bold text-[#D4AF37] px-2.5 py-1 rounded bg-[#D4AF37]/10 border border-[#D4AF37]/20">
                       {pillar.num}
                     </span>
                     <pillar.icon className="w-5 h-5 text-white/40 group-hover:text-[#D4AF37] transition-colors" />
@@ -248,7 +246,7 @@ export default function Philosophy({ onOpenBooking }) {
                   </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-white/5 flex items-center text-xs font-mono text-white/40 group-hover:text-[#D4AF37] transition-colors">
+                <div className="mt-6 pt-4 border-t border-white/5 flex items-center text-xs text-white/50 font-medium group-hover:text-[#D4AF37] transition-colors">
                   <span>MÉTODO CALEVI</span>
                   <ArrowRight className="w-3.5 h-3.5 ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />
                 </div>

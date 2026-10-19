@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { 
-  Sparkles, 
   Calendar, 
   CheckCircle2, 
   Layers, 
@@ -298,10 +297,6 @@ export default function Features() {
     >
       {/* Section Header */}
       <div className="flex flex-col items-start max-w-3xl mb-16 sm:mb-20">
-        <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#2A0408] border border-[#D4AF37]/30 text-[#F5E6B3] text-xs font-semibold uppercase tracking-wider mb-4">
-          <Sparkles className="w-3.5 h-3.5 text-[#D4AF37]" />
-          Metodologia na Prática
-        </div>
         <h2 className="text-[clamp(2.2rem,5vw,4.2rem)] font-serif font-bold text-white leading-tight">
           Acompanhamento inteligente e <br />
           <span className="italic font-normal text-gold-gradient">

@@ -10,7 +10,7 @@ export default function MobileBottomNav({ onOpenBooking }) {
       {/* Quick Jump to Services */}
       <a
         href="#servicos"
-        className="flex-1 py-3 px-3 rounded-full bg-white/5 border border-white/10 text-white/80 hover:text-white text-[11px] font-mono uppercase tracking-wider flex items-center justify-center gap-1.5 min-h-[44px]"
+        className="flex-1 py-3 px-3 rounded-full bg-white/5 border border-white/10 text-white/80 hover:text-white text-xs font-semibold uppercase tracking-wider flex items-center justify-center gap-1.5 min-h-[44px]"
       >
         <Layers className="w-3.5 h-3.5 text-[#D4AF37]" />
         <span>Serviços</span>

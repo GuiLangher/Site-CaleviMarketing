@@ -58,7 +58,7 @@ export default function Navbar({ onOpenBooking }) {
               <span className="font-serif tracking-widest text-sm sm:text-base font-bold text-white group-hover:text-[#F5E6B3] transition-colors leading-tight">
                 CALEVI
               </span>
-              <span className="font-mono text-[9px] uppercase tracking-wider text-white/50 hidden sm:inline-block">
+              <span className="text-[9px] uppercase tracking-wider text-white/60 font-semibold hidden sm:inline-block">
                 Comunicação & Marketing
               </span>
             </div>
@@ -109,7 +109,7 @@ export default function Navbar({ onOpenBooking }) {
           className="fixed inset-0 z-40 bg-[#100103]/95 backdrop-blur-2xl flex flex-col justify-center items-center gap-8 px-6 text-center animate-fade-in md:hidden"
           onClick={() => setMobileMenuOpen(false)}
         >
-          <div className="font-mono text-xs uppercase tracking-widest text-[#D4AF37] mb-2">
+          <div className="text-xs uppercase tracking-wider font-semibold text-[#D4AF37] mb-2">
             Navegação Editorial
           </div>
           {navLinks.map((link) => (
@@ -132,7 +132,7 @@ export default function Navbar({ onOpenBooking }) {
             >
               Agendar Diagnóstico Gratuito
             </button>
-            <p className="font-mono text-[10px] text-white/40">
+            <p className="text-xs text-white/50 font-medium">
               Calevi Comunicação e Marketing
             </p>
           </div>

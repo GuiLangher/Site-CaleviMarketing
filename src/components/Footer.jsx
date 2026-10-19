@@ -31,7 +31,7 @@ export default function Footer({ onOpenBooking }) {
               <span className="font-serif text-2xl font-bold tracking-widest text-white leading-tight">
                 CALEVI
               </span>
-              <span className="font-mono text-[10px] uppercase tracking-wider text-[#D4AF37]">
+              <span className="text-[10px] uppercase tracking-wider font-semibold text-[#D4AF37]">
                 Comunicação & Marketing
               </span>
             </div>
@@ -56,7 +56,7 @@ export default function Footer({ onOpenBooking }) {
 
         {/* Col 2: Navigation Links */}
         <div className="lg:col-span-3 flex flex-col">
-          <span className="font-mono text-xs uppercase tracking-widest text-[#D4AF37] mb-6">
+          <span className="text-xs uppercase tracking-wider font-semibold text-[#D4AF37] mb-6">
             Estrutura
           </span>
           <ul className="space-y-3 font-sans text-sm text-white/70">
@@ -85,7 +85,7 @@ export default function Footer({ onOpenBooking }) {
 
         {/* Col 3: Direct Contact & Channel */}
         <div className="lg:col-span-4 flex flex-col">
-          <span className="font-mono text-xs uppercase tracking-widest text-[#D4AF37] mb-6">
+          <span className="text-xs uppercase tracking-wider font-semibold text-[#D4AF37] mb-6">
             Conexão Direta
           </span>
           <div className="space-y-4 text-sm text-white/80">
@@ -136,8 +136,8 @@ export default function Footer({ onOpenBooking }) {
             </div>
           </div>
 
-          <div className="mt-8 p-4 rounded-2xl bg-white/5 border border-white/10 font-mono text-xs text-white/50">
-            <span className="text-[#D4AF37] block mb-1">PROCESSO SELETIVO DE CLIENTES:</span>
+          <div className="mt-8 p-4 rounded-2xl bg-white/5 border border-white/10 text-xs text-white/60 font-medium leading-relaxed">
+            <span className="text-[#D4AF37] font-semibold block mb-1">PROCESSO SELETIVO DE CLIENTES:</span>
             Limitamos o número de contas ativas para manter a proximidade, rigor e excelência artesanal.
           </div>
         </div>
@@ -145,7 +145,7 @@ export default function Footer({ onOpenBooking }) {
       </div>
 
       {/* Bottom Legal bar */}
-      <div className="max-w-7xl mx-auto pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-[11px] text-neutral-400">
+      <div className="max-w-7xl mx-auto pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-400 font-medium">
         <div>
           © {CURRENT_YEAR} CALEVI COMUNICAÇÃO E MARKETING. TODOS OS DIREITOS RESERVADOS.
         </div>

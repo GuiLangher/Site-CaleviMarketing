@@ -14,9 +14,16 @@ const BookingModal = lazy(() => import('./components/BookingModal'));
 
 export default function App() {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState(null);
 
-  const handleOpenBooking = () => setIsBookingOpen(true);
-  const handleCloseBooking = () => setIsBookingOpen(false);
+  const handleOpenBooking = (plan) => {
+    setSelectedPlan(typeof plan === 'string' ? plan : null);
+    setIsBookingOpen(true);
+  };
+  const handleCloseBooking = () => {
+    setIsBookingOpen(false);
+    setSelectedPlan(null);
+  };
 
   return (
     <div className="relative min-h-screen bg-transparent text-white selection:bg-[#D4AF37] selection:text-[#100103] overflow-x-hidden">
@@ -46,7 +53,7 @@ export default function App() {
           <ServicesProtocol onOpenBooking={handleOpenBooking} />
         </Suspense>
 
-        {/* Membership & Investment: 3 Tiers with Popping Central Card */}
+        {/* Membership & Investment: 4 Tiers with Prominent Central Card and Custom Model */}
         <Suspense fallback={<div className="min-h-[500px] w-full" aria-hidden="true" />}>
           <PricingMembership onOpenBooking={handleOpenBooking} />
         </Suspense>
@@ -63,7 +70,11 @@ export default function App() {
       {/* Strategic Diagnosis Booking Modal - Loaded on demand ONLY when user clicks */}
       {isBookingOpen && (
         <Suspense fallback={null}>
-          <BookingModal isOpen={isBookingOpen} onClose={handleCloseBooking} />
+          <BookingModal
+            isOpen={isBookingOpen}
+            onClose={handleCloseBooking}
+            initialPlan={selectedPlan}
+          />
         </Suspense>
       )}
     </div>
