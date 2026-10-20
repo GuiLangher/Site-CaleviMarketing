@@ -1,4 +1,6 @@
 User-agent: *
+Disallow: /teleprompter
+Disallow: /teleprompter/
 Allow: /
 
 Sitemap: https://calevi.com.br/sitemap.xml
