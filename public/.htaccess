@@ -7,12 +7,21 @@
   RewriteCond %{HTTP_HOST} ^www\.calevi\.com\.br$ [NC]
   RewriteRule ^(.*)$ https://calevi.com.br/$1 [R=301,L]
 
-  # 2. SPA Route Fallback
+  # 2. Teleprompter Direct Route (matches /teleprompter and /teleprompter/)
+  RewriteRule ^teleprompter/?$ /teleprompter/index.html [L]
+
+  # 3. SPA Route Fallback
   RewriteRule ^index\.html$ - [L]
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_FILENAME} !-l
   RewriteRule . /index.html [L]
+</IfModule>
+
+# Anti-indexing headers for Teleprompter (Google & other bots)
+<IfModule mod_headers.c>
+  SetEnvIf Request_URI "^/teleprompter" NOINDEX_TELEPROMPTER=1
+  Header set X-Robots-Tag "noindex, nofollow, noarchive, nosnippet" env=NOINDEX_TELEPROMPTER
 </IfModule>
 
 # Long-term Immutable Caching Headers for Fonts, Images, CSS & JS
