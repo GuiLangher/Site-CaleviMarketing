@@ -35,27 +35,27 @@ export default function App() {
 
       {/* Main Landing Page Experience */}
       <main>
-        {/* Hero: Opening Shot - Immediate Paint for Sub-Second LCP */}
+        {/* 1. Tela de início - Immediate Paint for Sub-Second LCP */}
         <Hero onOpenBooking={handleOpenBooking} />
 
-        {/* Features: Interactive Functional Artifacts */}
+        {/* 2. Diferenciais: Metodologia e Acompanhamento */}
         <Suspense fallback={<div className="min-h-[480px] w-full" aria-hidden="true" />}>
           <Features />
         </Suspense>
 
-        {/* Philosophy: The Contrast Manifesto & Founders Origin Story */}
-        <Suspense fallback={<div className="min-h-[600px] w-full" aria-hidden="true" />}>
-          <Philosophy onOpenBooking={handleOpenBooking} />
-        </Suspense>
-
-        {/* Services & Protocol: Sticky Stacking Archive */}
+        {/* 3. Serviços: Protocolos e Entregáveis */}
         <Suspense fallback={<div className="min-h-[600px] w-full" aria-hidden="true" />}>
           <ServicesProtocol onOpenBooking={handleOpenBooking} />
         </Suspense>
 
-        {/* Membership & Investment: 4 Tiers with Prominent Central Card and Custom Model */}
+        {/* 4. Modelos: Modelos de Contratação e Investimento */}
         <Suspense fallback={<div className="min-h-[500px] w-full" aria-hidden="true" />}>
           <PricingMembership onOpenBooking={handleOpenBooking} />
+        </Suspense>
+
+        {/* 5. Sobre Nós & 6. 6 Pilares de Valor */}
+        <Suspense fallback={<div className="min-h-[600px] w-full" aria-hidden="true" />}>
+          <Philosophy onOpenBooking={handleOpenBooking} />
         </Suspense>
       </main>
 

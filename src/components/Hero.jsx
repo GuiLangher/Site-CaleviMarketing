@@ -56,7 +56,7 @@ export default function Hero({ onOpenBooking }) {
 
           {/* Strategic Narrative / Subtitle */}
           <p className="mt-6 text-base sm:text-lg md:text-xl text-white/80 font-light leading-relaxed max-w-2xl animate-hero-fade-delay-1">
-            Unimos o rigor narrativo do <strong className="font-semibold text-white">Jornalismo</strong> à precisão de crescimento do <strong className="font-semibold text-white">Marketing Estratégico</strong>. Ajudamos marcas a encontrarem sua voz autêntica, fortalecerem seu posicionamento e conquistarem seu espaço.
+            Unimos o olhar atento do <strong className="font-semibold text-white">Jornalismo</strong> à visão estratégica do <strong className="font-semibold text-white">Marketing</strong> para ajudar marcas a comunicarem com clareza, fortalecerem seu posicionamento e construírem uma presença consistente no mercado.
           </p>
 
           {/* CTA Group with high thumb accessibility */}

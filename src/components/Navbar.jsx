@@ -23,9 +23,9 @@ export default function Navbar({ onOpenBooking }) {
 
   const navLinks = [
     { label: 'Diferenciais', href: '#diferenciais' },
-    { label: 'Sobre Nós', href: '#sobre-nos' },
     { label: 'Serviços', href: '#servicos' },
     { label: 'Modelos', href: '#modelos' },
+    { label: 'Sobre Nós', href: '#sobre-nos' },
   ];
 
   return (

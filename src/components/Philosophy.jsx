@@ -206,7 +206,7 @@ export default function Philosophy({ onOpenBooking }) {
         </div>
 
         {/* 6 Value Propositions (Propostas de Valor) in Asymmetric Negative-Space Grid */}
-        <div>
+        <div id="pilares" className="pt-8 scroll-mt-24">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12">
             <div>
               <span className="text-xs uppercase tracking-wider font-semibold text-[#D4AF37]">

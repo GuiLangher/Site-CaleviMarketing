@@ -66,11 +66,6 @@ export default function Footer({ onOpenBooking }) {
               </a>
             </li>
             <li>
-              <a href="#sobre-nos" className="hover:text-white transition-colors">
-                Sobre Nós & Fundadoras
-              </a>
-            </li>
-            <li>
               <a href="#servicos" className="hover:text-white transition-colors">
                 Protocolos & Serviços
               </a>
@@ -78,6 +73,16 @@ export default function Footer({ onOpenBooking }) {
             <li>
               <a href="#modelos" className="hover:text-white transition-colors">
                 Modelos de Contratação
+              </a>
+            </li>
+            <li>
+              <a href="#sobre-nos" className="hover:text-white transition-colors">
+                Sobre Nós & Fundadoras
+              </a>
+            </li>
+            <li>
+              <a href="#pilares" className="hover:text-white transition-colors">
+                6 Pilares de Valor
               </a>
             </li>
           </ul>
